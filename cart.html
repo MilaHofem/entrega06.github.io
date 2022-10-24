@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="portada.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="usuarioId" data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                  <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                  <li><a class="dropdown-item" href="index.html" onclick="borrarUsuario()">Cerrar sesión</a></li>
+                </ul>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container" p-5 backColor>
+      <br>
+      <h1 class="titleCenter">Carrito</h1>
+      <div class="articulos">
+        <br>
+        <h4>Artículos a comprar</h4><br>
+        <div class="row">
+              <div class="col">
+                <p></p>
+              </div>
+              <div class="col">
+                <p><b>Nombre</b></p>
+              </div>
+              <div class="col">
+                <p><b>Costo</b></p>
+              </div>
+              <div class="col">
+                <p><b>Cantidad</b></p>
+              </div>
+              <div class="col">
+                <p><b>Subtotal</b></p>
+              </div>
+              <hr>
+        </div>
+            
+        <div>
+
+          <div class="row" id="carrito-list-container">
+            <div class="col">
+              <p id="imagenProd"></p>
+            </div>
+            <div class="col">
+              <p id="nombreProd"></p>
+            </div>
+            <div class="col">
+              <p id="costoProd"></p>
+            </div>
+              <div class="col">
+                <input class="form-control" type="number" id="cantProd">
+              </div>
+              <div class="col">
+                <p id="subProd"></p>
+              </div>
+
+            </div>
+            <hr>
+        <br>
+        <br>
+      </div>
+      
+      <div class="tipoenvio">
+        <h4>Tipo de envío</h4>
+        <input type="radio" id="premium" name="valor" checked value="premium">
+        <label for="premium"> Premium 2 a 5 días (15%)</label><br>
+        <input type="radio" id="express" name="valor" required value="express">
+        <label for="express"> Express 5 a 8 días (7%)</label><br>
+        <input type="radio" id="estandar" name="valor" value="estandar">
+        <label for="estandar"> Estandar 12 a 15 días (5%)</label><br>
+        <br>
+      </div>
+      <div class="direccionEnvio">
+        <div class="form-group">
+
+          <form>
+            <h4>Dirección</h4>
+            <input class="form-control mb-3" id="address" placeholder="Calle" type="text">
+            <input class="form-control mb-3" id="number" placeholder="Número:" type="text">
+            <input class="form-control mb-3" id="corner" placeholder="Esquina:" type="text">
+          </form>
+
+        </div>
+
+      </div>
+      <br>
+      <hr>
+      
+
+
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+          </tr>
+          <br>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="estilo_comentar" scope="row">Sub Total -
+              <p>
+                Costo unitario del producto por cantidad -
+              </p>
+               </th>
+
+            <td id ="subtotalGeneral" class="estiloDeLetra"></td>
+
+          </tr>
+          <tr>
+            <th class="estilo_comentar" scope="row">Costo de Envío:
+              <p>
+                Según el tipo de envío -
+              </p>
+
+            </th>
+
+            <td id="costoXenvío" class="estiloDeLetra"></td>
+
+          </tr>
+          <tr>
+            <th class="estilo_comentar" scope="row">Total ($) -</th>
+            <td id="costoTotal" colspan="2"></td>
+
+          </tr>
+
+          <div class="text-center"> <button type="button" class="botonesFiltrado estiloDeLetra" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">
+              Forma de Pago
+
+
+            </button>
+          </div>
+          <br><br>
+
+        </tbody>
+      </table>
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>
