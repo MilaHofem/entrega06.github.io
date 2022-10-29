@@ -1,3 +1,7 @@
+//entrega 5:
+let productos_comprados = []
+
+
 // entrega 3:
 
 let resultJson = [] //array donde se van a guardar todos los comentarios mas los que se agreguen
@@ -24,6 +28,19 @@ if(localStorage.getItem("nombreUsuario") != null){
     
 }
 
+//entrega 5:
+function comprar(id){
+  if(localStorage.getItem("elemento_comprado")!= null){
+      productos_comprados = JSON.parse(localStorage.getItem("elemento_comprado"));
+  }
+  if(!productos_comprados.includes(id)){
+      productos_comprados.push(id);
+      localStorage.setItem("elemento_comprado", JSON.stringify(productos_comprados)); //guardar los productos en el array con una sola key
+  }
+    
+}
+
+
 //entrega 3:
 
 let lista_productos = [];
@@ -42,7 +59,12 @@ function mostrarLista(array, arrayComentarios){
                 <div>
                     <div class="d-flex w-100 justify-content-between">
                         <h1 class="mb-1">${array.name}</h1>
+
+                        
+                        <button onclick="comprar(${array.id})" class="botonComprar">Comprar</button>
                     </div>
+                          
+
                     <hr>
                     <h5 class="mb-1">Precio:</h5> ${array.cost} ${array.currency}
                     <br>
@@ -147,6 +169,7 @@ function guardarIdProd(id) {
     localStorage.setItem("ProductoID", id);
     window.location = "product-info.html"
 }
+
 
 function mostrarRel(array){
     for(let i = 0; i<array.length; i++){
